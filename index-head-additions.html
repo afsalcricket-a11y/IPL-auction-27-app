@@ -1,0 +1,18 @@
+<!-- ===== 1) PASTE these lines inside <head>, right after <title>IPL Auction Game</title> ===== -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#101827">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="IPL Auction">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<!-- ===== 2) PASTE this block just before the final </body> (after the last </script>) ===== -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('service-worker.js', { scope: './' })
+      .catch(function (e) { console.warn('Service worker registration failed:', e); });
+  });
+}
+</script>
